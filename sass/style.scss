@@ -1,0 +1,128 @@
+@use "./components/header";
+@use "./components/main";
+@use "./components/footer";
+@use "./utils/mixin" as *;
+@use "./utils/variables" as *;
+
+.container {
+  max-width: 1090px;
+  width: 100%;
+  padding: 0 15px;
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Montserrat Alternates;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  padding-left: 0;
+}
+
+li {
+  list-style: none;
+}
+
+.modal-wrapped {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color:#00000033;
+  top: 50%;
+  left: 50%;
+  transform: translate( -50%, -50%);
+  z-index: 110;
+  display: none;
+}
+
+.modal {
+  max-width: 463px;
+  width: 100%;
+  height: 245px;
+  background-color: $secondary-color;
+  border-radius: 20px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  padding: 30px;
+
+  &__close {
+    position: absolute;
+    right: 30px;
+  }
+
+  &__bg {
+    background-image: url(/img/bg-modal.svg);
+    position: absolute;
+    left: 50%;
+    top: 59%;
+    transform: translate(-50%,-50%);
+    z-index: 0;
+    width: 378px;
+    height: 106px;
+    display: flex;
+    justify-content: center;
+  }
+
+  &__title {
+    @include title;
+    margin-bottom: 0;
+    margin-top: 15px;
+  }
+
+  &__text {
+    @include text;
+    text-align: center;
+    margin-top: 45px;
+    margin-bottom: 45px;
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: 19px;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__label {
+    @include text;
+  }
+
+  &__input {
+    @include input(10px,80px);
+    @include text;
+    max-width: 169px;
+  }
+
+  &__btn {
+    @include text(12px,$secondary-color);
+    background-color: $primary-color;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    box-shadow: 3px 3px 0 0 rgba(0, 0, 0, 0.25);
+  }
+
+}
+
+.modal-registration {
+  max-width: 576px;
+  height: 316px;
+
+  &__bg {
+    background-image: url(/img/bg-modal-form.svg);
+    background-repeat: no-repeat;
+  }
+}
+
+.modal-active {
+  display: block;
+}

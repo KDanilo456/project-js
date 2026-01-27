@@ -1,0 +1,44 @@
+@use "../utils/mixin" as *;
+@use "../utils/variables" as *;
+
+.footer {
+    &__wrapped {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 220px;
+    }
+
+    &__info {
+        @include text;
+        line-height: 170%;
+    }
+
+    &__form {
+        position: relative;
+        display: flex;
+        align-items: baseline;
+        gap: 36px;
+        height: 60px;
+    }
+
+    &__input {
+        @include input(10px,0);
+        @include text;
+        width: 204px;
+    }
+
+    &__btn {
+        padding: 10px;
+        background-color: $primary-color;
+        border: none;
+        border-radius: 20px;
+        @include text(12px,$secondary-color);
+    }
+
+    &__hint {
+        position: absolute;
+        bottom: 0;
+        @include text(6px)
+    }
+}

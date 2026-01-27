@@ -1,0 +1,457 @@
+@use "../utils/mixin" as *;
+@use "../utils/variables" as *;
+
+.main {
+  background-image: url(/img/bg-image.png);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.wrapper {
+  background-color: $secondary-color;
+}
+
+.title {
+  @include title(24px);
+  text-align: center;
+  margin-top: 36px;
+  margin-bottom: 37px;
+}
+
+.leap-calculator {
+  padding-top: 36px;
+  padding-bottom: 36px;
+  max-width: 576px;
+  margin: 0 auto;
+
+  &__title {
+    @include title;
+    text-align: center;
+    margin-bottom: 37px;
+    margin-top: 0;
+  }
+}
+
+.game-calc {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  &__input {
+    @include input;
+    @include text;
+    width: 215px;
+  }
+  &__btn {
+    width: 35px;
+    height: 35px;
+    background-color: $primary-color;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    right: 0;
+    border: none;
+  }
+  &__form {
+    display: flex;
+    position: relative;
+  }
+
+  &__result {
+    @include text;
+    margin: 0;
+  }
+
+  &__input-num {
+    width: 150px;
+  }
+
+  &__time-input {
+    width: 150px;
+  }
+}
+
+.guess-number {
+  max-width: 576px;
+  margin: 0 auto;
+  padding-top: 36px;
+  padding-bottom: 38px;
+  &__title {
+    @include title;
+    text-align: center;
+    margin-top: 0;
+    margin-top: 0;
+    margin-bottom: 40px;
+  }
+}
+
+.roshambo {
+  padding-top: 40px;
+  padding-bottom: 36px;
+  &__title {
+    @include title;
+    text-align: center;
+    margin-top: 0;
+    margin-top: 0;
+    margin-bottom: 40px;
+  }
+
+  &__btns {
+    display: flex;
+    gap: 38px;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+
+  &__btn {
+    width: 60px;
+    height: 60px;
+    border: none;
+    border-radius: 20px;
+    background-color: $primary-color;
+  }
+
+  &__result {
+    @include text;
+    text-align: center;
+    margin-top: 39px;
+    margin-bottom: 37px;
+  }
+
+  &__computer-result {
+    display: block;
+    padding: 10px 20px;
+    border-radius: 20px;
+    border: none;
+    background-color: $primary-color;
+    @include text(12px,$secondary-color);
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  &__calc {
+    @include text;
+    position: absolute;
+    right: 208px;
+  }
+
+}
+
+.calc {
+  padding-top: 35px;
+  padding-bottom: 36px;
+  // border-top: 1px solid $primary-color;
+  // border-bottom: 1px solid $primary-color;
+  &__title {
+    @include title;
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 37px;
+  }
+
+  &__form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 38px;
+  }
+
+  &__input {
+    @include input(20px,20px);
+    @include text;
+    max-width: 135px;
+  }
+
+  &__result {
+    padding: 10px 20px;
+    background-color: $bg-input-color;
+    border: none;
+    border-radius: 20px;
+    width: 118px;
+    height: 35px;
+    overflow: hidden;
+    overflow-x: scroll;
+    @include text;
+
+    &::-webkit-scrollbar{
+      display: none;
+    }
+  }
+
+  &__operations {
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 10px;
+  }
+
+  &__btn {
+    @include text(12px,$secondary-color);
+    border: none;
+    border-radius: 20px;
+    background-color: $primary-color;
+    padding: 5px 10px;
+    box-shadow: 3px 3px 0 0 rgba(0, 0, 0, 0.25);
+  }
+
+
+}
+
+.decor-line {
+  width: 536px;
+  height: 1px;
+  background-color: $primary-color;
+  margin: 0 auto;
+}
+
+
+.time-calc {
+  max-width: 392px;
+  padding-top: 36px;
+  padding-bottom: 36px;
+  margin: 0 auto;
+  &__title {
+    @include title;
+    text-align: center;
+    margin-top: 0;
+  }
+
+  &__body {
+    justify-content: space-between;
+  }
+}
+
+.football {
+  padding-top: 36px;
+  padding-bottom: 36px;
+  &__title {
+    @include title;
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 37px;
+  }
+
+  &__body {
+    max-width: 720px;
+    height: 220px;
+    width: 100%;
+    border: 2px solid $primary-color;
+    background-color: #5ABB58;
+    border-radius: 37px;
+    margin: 0 auto;
+    box-sizing: border-box;
+  }
+
+  &__img {
+    position: absolute;
+  }
+}
+
+.max-number {
+  padding-top: 36px;
+  padding-bottom: 36px;
+  margin: 0 auto;
+
+  &__title {
+    @include title;
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 37px;
+  }
+
+  &__inputs {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 38px;
+  }
+  &__input {
+    @include input(20px,20px);
+    @include text;
+    max-width: 135px;
+  }
+  &__result {
+    @include text;
+    margin-top: 36px;
+    text-align: center;
+  }
+}
+
+.team {
+  padding-top: 36px;
+  padding-bottom: 36px;
+  margin: 0 auto;
+
+  &__title {
+    @include title;
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 37px;
+  }
+
+  &__body {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__img {
+    display: block;
+    width: 150px;
+    height: 150px;
+    border-radius: 20px;
+    background-color: $bg-input-color;
+    margin: 0 auto;
+  }
+
+  &__btn {
+    border: none;
+    background-color: transparent
+  }
+
+  &__btn-left {
+    margin-left: 80px;
+  }
+
+  &__btn-right {
+    margin-right: 80px;
+  }
+
+  &__name {
+    @include text(14px);
+    text-align: center;
+    margin-top: 23px;
+    margin-bottom: 23px;
+  }
+
+  &__text {
+    @include text;
+    margin-top: 0;
+    margin-bottom: 25px;
+    text-align: center;
+  }
+
+  &__list-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+  }
+
+  &__line {
+    width: 18px;
+    height: 3px;
+    border-radius: 3px;
+    background-color: $bg-input-color;
+  }
+
+  &__active {
+    width: 30px;
+    background-color: #797979;
+  }
+
+  &__hidden {
+    display: none;
+  }
+}
+
+
+.scientists {
+
+  &__list {
+    display: grid;
+    grid-template-columns: 100px 100px 100px 100px;
+    gap: 50px;
+    justify-content: center;
+  }
+  &__item {
+    width: 100px;
+    height: 100px;
+    background-color: $bg-input-color;
+    border-radius: 20px;
+    @include text(8px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  &__btns {
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 50px;
+    justify-content: center;
+    margin-top: 60px;
+  }
+
+  &__btn {
+    padding: 10px 20px;
+    max-height: 35px;
+    background-color: $primary-color;
+    border: none;
+    border-radius: 20px;
+    @include text(12px,$secondary-color);
+    box-shadow: 3px 3px 0 0 rgba(0, 0, 0, 0.25);
+  }
+
+  &__active {
+    border: 2px solid $win-color;
+  }
+
+  &__hidden {
+    opacity: 0;
+  }
+}
+
+.dino-game {
+
+  &__title {
+    @include title;
+    text-align: center;
+  }
+
+  &__wrapped {
+    max-width: 720px;
+    margin: 0 auto;
+    overflow: hidden;
+  }
+
+  &__body {
+    background-image: url(/img/bg-dinosaur-game.jpg);
+    background-repeat: repeat-x;
+    // background-position-x: right, 0;
+    height: 180px;
+    position: relative;
+    transition-duration: 1s;
+  }
+
+  &__dinosaur {
+    max-width: 50px;
+    max-height: 50px;
+    position: absolute;
+    bottom: 15px;
+    left: 10px;
+  }
+
+  &__cactus {
+    width: 60px;
+    height: 70px;
+    display: none;
+  }
+
+  &__btn {
+    position: absolute;
+    width: 100px;
+    height: 35px;
+    border-radius: 20px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    @include text;
+  }
+
+
+}

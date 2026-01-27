@@ -1,0 +1,71 @@
+@use "../utils/mixin" as *;
+@use "../utils/variables" as *;
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80px;
+  &__logo {
+    margin-right: 80px;
+  }
+  &__list {
+    display: flex;
+    gap: 50px;
+    position: relative;
+  }
+  &__link {
+    @include text;
+  }
+  &__link-icon {
+    margin-left: 8px;
+  }
+
+  &__dropdown {
+    width: 160px;
+    height: 105px;
+    display: none;
+    flex-direction: column;
+    text-align: center;
+    border: 1px solid $primary-color;
+    border-top: none;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    position: absolute;
+    left: -30px;
+    overflow: hidden;
+  }
+
+  &__dropdown-link {
+    @include text;
+    padding: 10px 48px;
+    height: 35px;
+    background-color: $secondary-color;
+    
+    &:hover {
+      background-color: #f1f1f1;
+    }
+  }
+
+  &__dropdown--active {
+    display: flex;
+  }
+
+  &__theme-switcher {
+    width: 40px;
+    height: 20px;
+    border-radius: 11px;
+    background-color: #7a7a7a;
+  }
+
+  &__user {
+    @include text;
+  }
+
+  &__user-management {
+    display: flex;
+    gap: 50px;
+    margin-left: auto;
+    align-items: center;
+  }
+}
